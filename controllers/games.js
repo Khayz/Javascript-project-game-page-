@@ -7,7 +7,7 @@ module.exports = app => {
     res.render("landing");
   });
 
-  app.get("/bot ", async (req, res) => {
-    res.render("insertaElNombreDeTuArchivoSinPonerLaExtensionComoLosDeArriba");
+  app.get("/bot", async (req, res) => {
+    res.render("bot");
   });
 };
