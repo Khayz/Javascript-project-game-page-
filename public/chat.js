@@ -1,5 +1,5 @@
 const questionNum = 0;													// keep count of question, used for IF condition.
-const question = '<h1>Hola, Puedo buscar por ti titulos de tu preferencia';				  // first question
+const question = '<h1>Hola, Puedo buscar por ti, titulos de tu preferencia';				  // first question
 
 const output = document.getElementById('output');				// store id="output" in output variable
 output.innerHTML = question;													// ouput first question
@@ -40,12 +40,10 @@ $(document).keypress(function (e) {
 document.getElementById("#contenido").addEventListener("onkeypress", bar)
 
 const contenido = document.querySelector("#contenido")
-function traer() {
-  fetch('https://api.rawg.io/api/genres')
-    .then(res => res.json())
-    .then(data => {
-      console.log(search.genres['0'])
-      contenido.innerHTML = `
+async function traer() {
+  const resolveData = await fetch('https://api.rawg.io/api/genres')
+  const data = resolveData.json()
+  console.log(data)
+  contenido.innerHTML = `
     <img src="${searc.genres['0'].picture.large}" width = "300px" class="img-fluid">`
-    })
 }
