@@ -2,6 +2,6 @@ $(document).ready(function () {
   $(".bxslider").bxSlider({
     mode: "fade",
     captions: true,
-    slideWidth: 865,
+    slideWidth: 890,
   });
 });
