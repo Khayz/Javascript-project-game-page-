@@ -164,6 +164,53 @@ body {
   border: 2px solid #fff;
 }
 
+
+/* BOT STYLES */
+
+input[type=text] {
+  width: 135px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('images/robot1.png');
+  background-size: 34px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  margin: 10vh;
+  margin-left: 18%;
+}
+
+input[type=text]:focus {
+  width: 50%;
+}
+
+body {
+	background-color: #808e9b;
+}
+
+h1, p {
+	font-family: sans-serif;
+	text-align: center;
+	color: #fff;
+	font-size:  100px;
+}
+
+
+p {
+	font-size: 30px;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+
 .container {
   width: 80%;
   margin: auto;
@@ -506,4 +553,5 @@ body {
 .footer .information .socialMedia .icons-media a:hover {
   font-size: 1.7em;
 }
+
 /*# sourceMappingURL=style.css.map */
