@@ -2,6 +2,11 @@
 // SECTION Get DATA--------------------------------
 const getGames = async (pageNumber = 1) => {
   const games = await fetch(`https://api.rawg.io/api/games?page=${pageNumber}`);
+  await innerData(pageNumber, games)
+};
+
+
+const innerData = async (pageNumber, games) => {
   const actualPage = document.querySelector(`.page${pageNumber}`);
   const allPages = document.querySelectorAll(".links a");
   allPages.forEach(a => {
@@ -19,7 +24,8 @@ const getGames = async (pageNumber = 1) => {
        </div> </div> </div> `
   );
   document.querySelector(".searchValues").innerHTML = dataGame.join("  ");
-};
+}
+
 
 getGames();
 
