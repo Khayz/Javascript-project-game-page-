@@ -15,7 +15,7 @@ const eventSearchGame = (data) => {
     })
     const newGameArray = [...new Set(gameArray)]
     const innerToDiv = []
-    newGameArray.map(e => innerToDiv.push(`<p>${e}</p>`))
+    newGameArray.map(e => innerToDiv.push(`<h1>${e}</h1>`))
     searchedGames.innerHTML = innerToDiv.join('')
   })
 }
