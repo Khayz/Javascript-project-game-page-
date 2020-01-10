@@ -1,6 +1,7 @@
 const krabot = document.querySelector(".krabot");
 const initBot = document.querySelector(".initBot");
 const botTitle = document.querySelector(".krabotTitle");
+const gamesByBot = document.querySelector(".gamesByBot");
 
 const answer1 = document.querySelector(".answer1");
 const answer2 = document.querySelector(".answer2");
@@ -8,6 +9,9 @@ const answer3 = document.querySelector(".answer3");
 const answer4 = document.querySelector(".answer4");
 
 const dataNameArray = [];
+const gameArray = [];
+let platform;
+let genre;
 
 initBot.addEventListener("click", () => {
   initBot.style.display = "none";
@@ -29,15 +33,19 @@ const platformAnswers = () => {
 const firstEventAnswers = answer => {
   answer.addEventListener("click", () => {
     if (answer.textContent == "Playstation4") {
+      platform = answer.textContent;
       genereAnswers();
     }
     if (answer.textContent == "Xbox One") {
+      platform = answer.textContent;
       genereAnswers();
     }
     if (answer.textContent == "Steam") {
+      platform = answer.textContent;
       genereAnswers();
     }
     if (answer.textContent == "Nintendo") {
+      platform = answer.textContent;
       genereAnswers();
     }
   });
@@ -46,7 +54,7 @@ const firstEventAnswers = answer => {
 const genereAnswers = () => {
   botTitle.textContent = `Que genero de juegos te gustan mas?`;
   answer1.textContent = `Action`;
-  answer2.textContent = `Fight`;
+  answer2.textContent = `RPG`;
   answer3.textContent = `Shooter`;
   answer4.textContent = `Aventure`;
   secondEventAnswers(answer1);
@@ -58,15 +66,19 @@ const genereAnswers = () => {
 const secondEventAnswers = answer => {
   answer.addEventListener("click", () => {
     if (answer.textContent == "Action") {
+      genre = answer.textContent;
       finalResult();
     }
-    if (answer.textContent == "Fight") {
+    if (answer.textContent == "RPG") {
+      genre = answer.textContent;
       finalResult();
     }
     if (answer.textContent == "Shooter") {
+      genre = answer.textContent;
       finalResult();
     }
     if (answer.textContent == "Aventure") {
+      genre = answer.textContent;
       finalResult();
     }
   });
@@ -86,9 +98,27 @@ const finalResult = async () => {
     const dataArray = data.map(e => e.results);
     dataArray.map(e => e.map(c => dataNameArray.push(c)));
     const newGameNameArray = [...new Set(dataNameArray)];
-    console.log(newGameNameArray);
+    printGames(newGameNameArray);
     console.timeEnd();
   } catch (error) {
     console.error({ message: error });
   }
+};
+
+const printGames = newGameNameArray => {
+  console.log(newGameNameArray);
+  newGameNameArray.forEach(newGame => {
+    if (
+      newGame.platforms.map(e => e.platform.name == platform) &&
+      newGame.genres.map(e => e.name == genre)
+    ) {
+      if (gameArray.length < 10) {
+        gameArray.push(
+          `<p><img src='${newGame.background_image}'></img>${newGame.name}</p>`
+        );
+      }
+    }
+    gamesByBot.innerHTML = gameArray.join("");
+  });
+  console.log({ platform, genre });
 };
