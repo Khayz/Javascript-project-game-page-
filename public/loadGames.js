@@ -2,9 +2,8 @@
 // SECTION Get DATA--------------------------------
 const getGames = async (pageNumber = 1) => {
   const games = await fetch(`https://api.rawg.io/api/games?page=${pageNumber}`);
-  await innerData(pageNumber, games)
+  innerData(pageNumber, games);
 };
-
 
 const innerData = async (pageNumber, games) => {
   const actualPage = document.querySelector(`.page${pageNumber}`);
@@ -21,11 +20,10 @@ const innerData = async (pageNumber, games) => {
     e =>
       ` <div class='gameAndImage'> <div class='imageGame' style="background-image: url('${e.background_image}')"></div> <div class='nameGame' > <h1>${e.name}</h1> <div>
        <h2>Juego Completo</h2> <h2>${e.platforms[0].platform.name} and more... </h2> 
-       </div> </div> </div> `
+       </div> </div> </div>`
   );
   document.querySelector(".searchValues").innerHTML = dataGame.join("  ");
-}
-
+};
 
 getGames();
 
@@ -42,4 +40,3 @@ const eventOfLink = links => {
 };
 
 eventOfLink(selectLink(".links a"));
-

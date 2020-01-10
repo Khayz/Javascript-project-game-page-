@@ -1,0 +1,367 @@
+@mixin diferentsClasesSettings {
+  width: calc(100% / 4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(19, 29, 124);
+  color: #fff;
+  margin: 0 10px;
+  transition: 0.3s ease-in-out;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  background-image: url("../images/gaming.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+// SECTION  SLIDER
+.bx-wrapper {
+  margin: 80px auto;
+  border: 0 !important;
+}
+
+.bxslider {
+  div {
+    img {
+      height: 400;
+    }
+  }
+}
+
+.bx-caption {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+// SECTION VIDEO
+
+#video {
+  margin: 0 25%;
+}
+
+// SECTION  NAVBAR
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 8vh;
+  transition: 0.3s ease-in-out;
+  background-color: #fff;
+  .logoAndTitle {
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    i {
+      margin: 0 5px;
+      color: rgb(0, 112, 209);
+    }
+    a {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 17px;
+      span {
+        font-weight: lighter;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s ease-in-out;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+.navbar:hover {
+  background-color: #1d1919;
+  .logoAndTitle {
+    i {
+      margin: 0 5px;
+      color: rgb(255, 255, 255);
+    }
+    h1 {
+      color: #fff;
+      span {
+        font-weight: lighter;
+        color: #fff;
+      }
+    }
+  }
+  a {
+    color: #fff;
+  }
+}
+
+// SECTION  TITULO PRINCIPAL DE GAMING
+.principalTitle {
+  width: 50%;
+  margin: 100px auto;
+  background-color: #fff;
+  color: rgb(61, 58, 58);
+  text-align: center;
+  font-size: 3em;
+  text-transform: uppercase;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+// SECTION  BOXES DE LAS CATEGORIAS
+.diferentClases {
+  width: 70%;
+  height: 150px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.diferentClases > div {
+  @include diferentsClasesSettings();
+  i {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 1.3em;
+  }
+}
+
+.diferentClases > div:hover {
+  border: 2px solid #fff;
+}
+
+// SECTION  TODOS LOS JUEGOS
+.container {
+  width: 80%;
+  margin: auto;
+  .links {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    a {
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+    a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+  .searchValues {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .gameAndImage {
+      width: 125px;
+      height: 220px;
+      margin: 10px 0;
+      background-color: #1d1919;
+      transition: 0.3s ease-in-out;
+      .imageGame {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        height: 125px;
+      }
+      .nameGame {
+        display: flex;
+        height: calc(220px - 125px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        h1 {
+          font-size: 13px;
+          color: rgb(228, 228, 228);
+          padding-left: 5px;
+          padding-top: 5px;
+          text-align: center;
+          font-weight: normal;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+        }
+        h1:hover {
+          font-size: 15px;
+        }
+        div {
+          h1 {
+            color: rgb(133, 133, 133);
+            font-weight: normal;
+          }
+          h2 {
+            font-size: 13px;
+            color: rgb(133, 133, 133);
+            padding: 5px 5px;
+            text-align: center;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+    .gameAndImage:hover {
+      border: 2px solid #fff;
+    }
+  }
+  .links {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 0;
+    a {
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+    a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
+
+// SECTION  FOOTER
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin footer-links {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  padding-bottom: 3px;
+}
+@mixin footer-h3 {
+  font-size: 15px;
+  font-weight: normal;
+  padding-bottom: 10px;
+}
+
+@mixin icon-media {
+  height: 100%;
+  font-size: 1.5em;
+  padding: 0;
+  transition: 0.3s ease-in-out;
+}
+.footer {
+  color: #fff;
+  background-color: #1d1919;
+  margin: auto;
+  padding-bottom: 20px;
+  @include flex-column();
+  p {
+    padding: 5px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+  }
+  .information {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: auto;
+    .allServices {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      .services {
+        @include flex-column();
+        h3 {
+          @include footer-h3();
+        }
+        a {
+          @include footer-links();
+        }
+        a:hover {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+      .account {
+        @include flex-column();
+        h3 {
+          @include footer-h3();
+        }
+        a {
+          @include footer-links();
+        }
+        a:hover {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+      .legal {
+        @include flex-column();
+        h3 {
+          @include footer-h3();
+        }
+        a {
+          @include footer-links();
+        }
+        a:hover {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+    .socialMedia {
+      width: 50%;
+      @include flex-column();
+      text-align: start;
+      padding-left: 10px;
+      background-color: #494949;
+      h3 {
+        margin-top: 20px;
+        @include footer-h3();
+      }
+      a {
+        @include footer-links();
+        padding-bottom: 10px;
+      }
+      a:hover {
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .icons-media {
+        padding-top: 10px;
+        font-size: 1.5em;
+        padding-right: 5px;
+        width: 100%;
+        .facebook {
+          @include icon-media();
+          i {
+            color: rgb(24, 97, 233);
+          }
+        }
+        .twitter {
+          @include icon-media();
+          i {
+            color: rgb(24, 174, 233);
+          }
+        }
+        .github {
+          @include icon-media();
+          i {
+            color: rgb(0, 0, 0);
+          }
+        }
+        .linkedIn {
+          @include icon-media();
+          i {
+            color: rgb(30, 86, 189);
+          }
+        }
+        a:hover {
+          font-size: 1.7em;
+        }
+      }
+    }
+  }
+}

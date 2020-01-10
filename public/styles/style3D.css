@@ -1,0 +1,13 @@
+.scene {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  width: 50%;
+  height: 35vh;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 35vh;
+}
