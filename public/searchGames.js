@@ -55,8 +55,8 @@ const printName = (event, data) => {
     const findGame = regExpName.test(nameOfGame);
     findGame && inputValue
       ? gameArray.push(
-          `<div class='games'><img src='${e.background_image}'></img><p>${nameOfGame}</p></div>`
-        )
+        `<div class='games'><img src='${e.background_image}'></img><p>${nameOfGame}</p></div>`
+      )
       : "";
   });
   const newGameArray = [...new Set(gameArray)];

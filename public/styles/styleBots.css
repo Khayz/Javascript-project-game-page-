@@ -101,9 +101,71 @@ img {
   color: #fff;
 }
 
+/* FILTER STYLES */
+.answer1 {
+  text-align: center;
+  color: #fff;
+  margin-top: 2%;
+  font-size: 20px;
+}
+.answer2 {
+  text-align: center;
+  color: #fff;
+  margin-top: 2%;
+  font-size: 20px;
+}
+.answer3 {
+  text-align: center;
+  color: #fff;
+  margin-top: 2%;
+  font-size: 20px;
+}
+.answer4 {
+  text-align: center;
+  color: #fff;
+  margin-top: 2%;
+  font-size: 20px;
+}
+
+.gamesByBot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: auto;
+  margin: auto;
+  border-radius: 5px;
+}
+
+p {
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  margin: 3%;
+  padding: 12px;
+  color: white;
+  margin: 3%;
+}
+
+img {
+  height: 70px;
+  width: 78px;
+  border-radius: 8px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.8);
+}
+
+img:hover {
+  opacity: .9;
+}
+
+
+p:hover {
+  color: #0070d1;
+}
+
 /* BOT STYLES */
 input[type="text"] {
-  width: 135px;
+  width: 136px;
   box-sizing: border-box;
   border: 2px solid transparent;
   border-radius: 8px;
@@ -169,6 +231,15 @@ input {
 
 .krabot h4 {
   cursor: pointer;
+  text-decoration-line: underline;
+  text-shadow: 2px 1px 2px black; 
+}
+
+.krabotTitle {
+  text-shadow: 1px 2px 2px black;
+}
+.title {
+  text-shadow: 1px 2px 2px black;
 }
 
 /* ESTILOS DE LA LISTA DE JUEGOS */
