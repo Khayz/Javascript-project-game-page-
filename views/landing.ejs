@@ -1,27 +1,54 @@
-<%- include('header') %>
-<!-- SECTION Slider -->
-<div class="bxslider">
-  <div>
-    <img src="images/assasins_logo.jpg" title="AC Odyssey" />
-  </div>
-  <div>
-    <img src="images/hellblade.jpg" title="Hellblade" />
-  </div>
-  <div>
-    <img src="images/reddead.jpg" title="Red Dead Redemption 2" />
-  </div>
-  <div>
-    <img src="images/monsterh.jpg" title="Monster Hunter World" />
-  </div>
-  <div>
-    <img src="images/bioshock.jpg" title="Bioshock The Collection" />
-  </div>
-  <div>
-    <img src="images/halflife.jpg" title="Half Life" />
-  </div>
-  <div>
-    <img src="images/jedif.jpg" title="Star Wars JEDI Fallen Order" />
-  </div>
-</div>
-<video id="video" width="520" src="multiplayer/PlayStation4.mp4"></video>
-<%- include('footer') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dom structure</title>
+    <link rel="stylesheet" href="styles/styleGames.css" />
+    <script
+      src="https://kit.fontawesome.com/6204a157d4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <%- include('navbar') %>
+    <!-- SECTION Slider -->
+    <div class="bxslider">
+      <div>
+        <img src="images/assasins_logo.jpg" title="AC Odyssey" />
+      </div>
+      <div>
+        <img src="images/hellblade.jpg" title="Hellblade" />
+      </div>
+      <div>
+        <img src="images/reddead.jpg" title="Red Dead Redemption 2" />
+      </div>
+      <div>
+        <img src="images/monsterh.jpg" title="Monster Hunter World" />
+      </div>
+      <div>
+        <img src="images/bioshock.jpg" title="Bioshock The Collection" />
+      </div>
+      <div>
+        <img src="images/halflife.jpg" title="Half Life" />
+      </div>
+      <div>
+        <img src="images/jedif.jpg" title="Star Wars JEDI Fallen Order" />
+      </div>
+    </div>
+    <video id="video" width="520" src="multiplayer/PlayStation4.mp4"></video>
+    <%- include('footer') %>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="slider.js"></script>
+    <script src="loadGames.js"></script>
+    <script src="multiplayer/player.js"></script>
+  </body>
+</html>

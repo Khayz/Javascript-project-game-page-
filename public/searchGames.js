@@ -1,109 +1,47 @@
+import getData from "./fetchData.js";
+
 const searchGame = document.querySelector(".searchGame");
 const searchedGames = document.querySelector(".searchedGames");
-const gameNameArray = [];
 
-const getData = async () => {
-  try {
-    console.time();
-    const resolveData = await fetch("games.json");
-    const data = await resolveData.json();
-    const dataArray = data.map(e => e.results);
-    dataArray.map(e => e.map(c => gameNameArray.push(c)));
-    const newGameNameArray = [...new Set(gameNameArray)];
-    eventSearchGame(newGameNameArray);
-    console.timeEnd();
-  } catch (error) {
-    console.error({ message: error });
-  }
-};
+function filterResults(data) {
+  console.log("data: ", data);
+  return data.map(e => e.results);
+}
 
-const eventSearchGame = data => {
-  searchGame.addEventListener("keyup", event => {
-    printName(event, data);
-  });
+const arrayWithNoRepetedValues = array => {
+  return [...new Set(array)];
 };
 
 const printName = (event, data) => {
-  const gameArray = [];
-  data.map(e => {
-    const inputValue = event.target.value;
-    const nameOfGame = e.name;
-    const regExpName = RegExp(inputValue, "gi");
-    const findGame = regExpName.test(nameOfGame);
-    findGame && inputValue
-      ? gameArray.push(
-          `<div class='games'><img src='${e.background_image}'></img><p>${nameOfGame}</p></div>`
-        )
-      : "";
-  });
-  const newGameArray = [...new Set(gameArray)];
-  searchedGames.innerHTML = newGameArray.join("");
-};
-
-getData();
-
-const searchGame = document.querySelector(".searchGame");
-const searchedGames = document.querySelector(".searchedGames");
-const gameNameArray = [];
-
-const searchGame = document.querySelector(".searchGame");
-const searchedGames = document.querySelector(".searchedGames");
-
-const eventSearchGame = data => {
-  searchGame.addEventListener("keyup", event => {
-    const gameArray = [];
-    data.map(e => {
-      const inputValue = event.target.value;
-      const nameOfGame = e.name;
-      const regExpName = RegExp(inputValue, "gi");
-      const findGame = regExpName.test(nameOfGame);
-      if (findGame && inputValue) {
-        gameArray.push(e.name);
+  return data.map(e =>
+    e.map(e => {
+      if (RegExp(event.target.value, "gi").test(e.name) && event.target.value) {
+        return `<div class='filteredGames'><img src='${e.background_image}'>
+        </img><p class='gameTitle'>${e.name}</p><p class='gameSubtitle'>Juego Completo</p></div>`;
+      } else {
+        return " ";
       }
-    });
-    const newGameArray = [...new Set(gameArray)];
-    const innerToDiv = [];
-    newGameArray.map(e => innerToDiv.push(`<h1>${e}</h1>`));
-    searchedGames.innerHTML = innerToDiv.join("");
-  });
+    })
+  );
 };
 
-const getData = async () => {
-  try {
-    console.time();
-    const resolveData = await fetch("games.json");
-    const data = await resolveData.json();
-    const dataArray = data.map(e => e.results);
-    dataArray.map(e => e.map(c => gameNameArray.push(c)));
-    const newGameNameArray = [...new Set(gameNameArray)];
-    eventSearchGame(newGameNameArray);
-    console.timeEnd();
-  } catch (error) {
-    console.error({ message: error });
-  }
+const innerDataToSearchGames = (gameArray, searchedGames) => {
+  // const newarray = [...new Set(gameArray)];
+  // console.log(
+  //   "Set Array: ",
+  //   newarray.map(value => value.filter(newVal => !!newVal))
+  // );
+
+  return gameArray
+    ? (searchedGames.innerHTML = [...new Set(gameArray)].map(value =>
+        value.filter(newVal => !!newVal).join("")
+      ))
+    : " ";
 };
 
-const eventSearchGame = data => {
-  searchGame.addEventListener("keyup", event => {
-    printName(event, data);
-  });
-};
-
-const printName = (event, data) => {
-  const gameArray = [];
-  data.map(e => {
-    const inputValue = event.target.value;
-    const nameOfGame = e.name;
-    const regExpName = RegExp(inputValue, "gi");
-    const findGame = regExpName.test(nameOfGame);
-    findGame && inputValue
-      ? gameArray.push(
-          `<div class='games'><img src='${e.background_image}'></img><p>${nameOfGame}</p></div>`
-        )
-      : "";
-  });
-  const newGameArray = [...new Set(gameArray)];
-  searchedGames.innerHTML = newGameArray.join("");
-};
-
-getData();
+searchGame.addEventListener("keyup", async event => {
+  innerDataToSearchGames(
+    printName(event, arrayWithNoRepetedValues(filterResults(await getData()))),
+    searchedGames
+  );
+});

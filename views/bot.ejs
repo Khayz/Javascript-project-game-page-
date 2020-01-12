@@ -1,17 +1,45 @@
-<%- include('headerBot') %>
-<div class="scene"></div>
-<div class="krabot">
-  <h1 class="krabotTitle">
-    Test con Krabot <button class="initBot">INICIAR</button>
-  </h1>
-  <h4 class="answer1"></h4>
-  <h4 class="answer2"></h4>
-  <h4 class="answer3"></h4>
-  <h4 class="answer4"></h4>
-  <div class="gamesByBot"></div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dom structure</title>
+    <link rel="stylesheet" href="styles/styleBots.css" />
+    <link rel="stylesheet" href="styles/style3D.css" />
+    <script
+      src="https://kit.fontawesome.com/6204a157d4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  </head>
 
-<h1 class="title">Search a game or Ask to Botof War</h1>
-<input class="searchGame" type="text" placeholder="Search..." />
-<div class="searchedGames"></div>
-<%- include('footerBot') %>
+  <body>
+    <%- include('navbar') %>
+    <div class="scene"></div>
+    <div class="container">
+      <div class="krabot">
+        <h1 class="krabotTitle">
+          KRABOT <button class="initBot">INICIAR</button>
+        </h1>
+        <div class="answers">
+          <h4 class="answer1 active"></h4>
+          <h4 class="answer2"></h4>
+          <h4 class="answer3"></h4>
+          <h4 class="answer4"></h4>
+        </div>
+        <div class="gamesByBot"></div>
+      </div>
+
+      <h1 class="title">Encuentra un Juego</h1>
+      <input class="searchGame" type="text" placeholder="Search..." />
+      <div class="searchedGames"></div>
+    </div>
+    <%- include('footer') %>
+    <script src="three.min.js"></script>
+    <script src="GLTFLoader.js"></script>
+    <script src="app.js"></script>
+    <script type="module" src="searchGames.js"></script>
+    <script src="krabot.js"></script>
+  </body>
+</html>

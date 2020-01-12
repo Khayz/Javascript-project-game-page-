@@ -19,7 +19,7 @@ initBot.addEventListener("click", () => {
 });
 
 const platformAnswers = () => {
-  botTitle.textContent = `Que plataforma de juegos usas mas?`;
+  botTitle.textContent = `Selecciona tu plataforma de videojuegos preferida.`;
   answer1.textContent = `Playstation4`;
   answer2.textContent = `Xbox One`;
   answer3.textContent = `Steam`;
@@ -114,7 +114,7 @@ const printGames = newGameNameArray => {
     ) {
       if (gameArray.length < 10) {
         gameArray.push(
-          `<p><img src='${newGame.background_image}'></img>${newGame.name}</p>`
+          `<div class='botGames'><img src='${newGame.background_image}'></img><p>${newGame.name}</p><p>Juego Completo</p></div>`
         );
       }
     }

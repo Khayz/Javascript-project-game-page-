@@ -1,51 +1,78 @@
-<%- include('header') %>
-<!-- SECTION Contenido Principal ------------------------------------------------ -->
-<h1 class="principalTitle">Juegos de la decada</h1>
-<div class="diferentClases">
-  <div class="Playstation">
-    <i class="fab fa-playstation"></i>
-    <p>Playstation</p>
-  </div>
-  <div class="Xbox">
-    <i class="fab fa-xbox"></i>
-    <p>Xbox</p>
-  </div>
-  <div class="Steam">
-    <i class="fab fa-steam"></i>
-    <p>Steam</p>
-  </div>
-  <div class="Nintendo">
-    <i class="fas fa-gamepad"></i>
-    <p>Nintendo</p>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dom structure</title>
+    <link rel="stylesheet" href="styles/styleGames.css" />
+    <script
+      src="https://kit.fontawesome.com/6204a157d4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  </head>
 
-<div class="container">
-  <div class="links">
-    <a class="page1">1</a>
-    <a class="page2">2</a>
-    <a class="page3">3</a>
-    <a class="page4">4</a>
-    <a class="page5">5</a>
-    <a class="page6">6</a>
-    <a class="page7">7</a>
-    <a class="page8">8</a>
-    <a class="page9">9</a>
-    <a class="page10">10</a>
-  </div>
-  <section class="searchValues"></section>
-  <hr />
-  <div class="links">
-    <a class="page1">1</a>
-    <a class="page2">2</a>
-    <a class="page3">3</a>
-    <a class="page4">4</a>
-    <a class="page5">5</a>
-    <a class="page6">6</a>
-    <a class="page7">7</a>
-    <a class="page8">8</a>
-    <a class="page9">9</a>
-    <a class="page10">10</a>
-  </div>
-</div>
-<%- include('footer') %>
+  <body>
+    <%- include('navbar') %>
+    <!-- SECTION Contenido Principal ------------------------------------------------ -->
+    <h1 class="principalTitle">Juegos de la decada</h1>
+    <div class="diferentClases">
+      <div class="Playstation">
+        <i class="fab fa-playstation"></i>
+        <p>Playstation</p>
+      </div>
+      <div class="Xbox">
+        <i class="fab fa-xbox"></i>
+        <p>Xbox</p>
+      </div>
+      <div class="Steam">
+        <i class="fab fa-steam"></i>
+        <p>Steam</p>
+      </div>
+      <div class="Nintendo">
+        <i class="fas fa-gamepad"></i>
+        <p>Nintendo</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="links">
+        <a class="page1">1</a>
+        <a class="page2">2</a>
+        <a class="page3">3</a>
+        <a class="page4">4</a>
+        <a class="page5">5</a>
+        <a class="page6">6</a>
+        <a class="page7">7</a>
+        <a class="page8">8</a>
+        <a class="page9">9</a>
+        <a class="page10">10</a>
+      </div>
+      <section class="searchValues"></section>
+      <hr />
+      <div class="links">
+        <a class="page1">1</a>
+        <a class="page2">2</a>
+        <a class="page3">3</a>
+        <a class="page4">4</a>
+        <a class="page5">5</a>
+        <a class="page6">6</a>
+        <a class="page7">7</a>
+        <a class="page8">8</a>
+        <a class="page9">9</a>
+        <a class="page10">10</a>
+      </div>
+    </div>
+    <%- include('footer') %>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="slider.js"></script>
+    <script src="loadGames.js"></script>
+    <script src="multiplayer/player.js"></script>
+  </body>
+</html>
